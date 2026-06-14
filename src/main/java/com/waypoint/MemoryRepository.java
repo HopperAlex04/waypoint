@@ -1,0 +1,34 @@
+package com.waypoint;
+
+import java.time.LocalDateTime;
+import java.util.Hashtable;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class MemoryRepository implements TaskRepository {
+
+    private Hashtable<Integer, Task> data;
+    int next_id;
+
+    public MemoryRepository() {
+        data = new Hashtable<>();
+        next_id = 0;
+    }
+
+    public Task get(int id) {
+        return data.get(id);
+    }
+
+    public Task post(
+        LocalDateTime start_time,
+        LocalDateTime end_time,
+        String title
+    ) {
+        Task new_task = new Task(next_id, start_time, end_time, title);
+        data.put(next_id, new_task);
+
+        next_id++;
+
+        return new_task;
+    }
+}
