@@ -31,4 +31,21 @@ public class MemoryRepository implements TaskRepository {
 
         return new_task;
     }
+
+    public Task put(
+        int id,
+        LocalDateTime start_time,
+        LocalDateTime end_time,
+        String title
+    ) {
+        Task task = data.get(id);
+        if (task == null) {
+            return null;
+        }
+
+        task.setStartTime(start_time);
+        task.setEndTime(end_time);
+        task.setTitle(title);
+        return task;
+    }
 }

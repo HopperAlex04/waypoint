@@ -10,4 +10,11 @@ public interface TaskRepository {
         LocalDateTime end_time,
         String title
     );
+
+    public Task put(
+        int id,
+        LocalDateTime start_time,
+        LocalDateTime end_time,
+        String title
+    );
 }

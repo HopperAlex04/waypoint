@@ -24,9 +24,14 @@ public class TaskService {
         return repository.post(start_time, end_time, title);
     }
 
-    // public Task updateTask(Long id, String title) {
-    //     return repository.update(id, title);
-    // }
+    public Task updateTask(
+        int id,
+        LocalDateTime start_time,
+        LocalDateTime end_time,
+        String title
+    ) {
+        return repository.put(id, start_time, end_time, title);
+    }
 
     // public void deleteTask(Long id) {
     //     repository.delete(id);

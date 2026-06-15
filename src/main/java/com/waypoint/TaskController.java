@@ -25,4 +25,17 @@ public class TaskController {
             body.getTitle()
         );
     }
+
+    @PutMapping("/{id}")
+    public Task updateTask(
+        @PathVariable int id,
+        @RequestBody UpdateTaskRequest body
+    ) {
+        return service.updateTask(
+            id,
+            body.getStartTime(),
+            body.getEndTime(),
+            body.getTitle()
+        );
+    }
 }
