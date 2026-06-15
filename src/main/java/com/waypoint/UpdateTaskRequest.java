@@ -4,30 +4,30 @@ import java.time.LocalDateTime;
 
 public class UpdateTaskRequest {
 
-    LocalDateTime start_time;
-    LocalDateTime end_time;
+    LocalDateTime startTime;
+    LocalDateTime endTime;
     String title;
 
     public UpdateTaskRequest() {}
 
     public LocalDateTime getStartTime() {
-        return start_time;
+        return startTime;
     }
 
     public LocalDateTime getEndTime() {
-        return end_time;
+        return endTime;
     }
 
     public String getTitle() {
         return title;
     }
 
-    public void setStartTime(LocalDateTime start_time) {
-        this.start_time = start_time;
+    public void setStartTime(LocalDateTime startTime) {
+        this.startTime = startTime;
     }
 
-    public void setEndTime(LocalDateTime end_time) {
-        this.end_time = end_time;
+    public void setEndTime(LocalDateTime endTime) {
+        this.endTime = endTime;
     }
 
     public void setTitle(String title) {

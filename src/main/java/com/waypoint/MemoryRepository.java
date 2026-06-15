@@ -48,4 +48,8 @@ public class MemoryRepository implements TaskRepository {
         task.setTitle(title);
         return task;
     }
+
+    public Task delete(int id) {
+        return data.remove(id);
+    }
 }

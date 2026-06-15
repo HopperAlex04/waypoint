@@ -38,4 +38,9 @@ public class TaskController {
             body.getTitle()
         );
     }
+
+    @DeleteMapping("/{id}")
+    public Task deleteTask(@PathVariable int id) {
+        return service.deleteTask(id);
+    }
 }

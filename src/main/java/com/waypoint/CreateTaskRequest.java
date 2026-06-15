@@ -1,33 +1,35 @@
 package com.waypoint;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.LocalDateTime;
 
 public class CreateTaskRequest {
 
-    LocalDateTime start_time;
-    LocalDateTime end_time;
-    String title;
+    private LocalDateTime startTime;
+
+    private LocalDateTime endTime;
+    private String title;
 
     public CreateTaskRequest() {}
 
     public LocalDateTime getStartTime() {
-        return start_time;
+        return startTime;
     }
 
     public LocalDateTime getEndTime() {
-        return end_time;
+        return endTime;
     }
 
     public String getTitle() {
         return title;
     }
 
-    public void setStartTime(LocalDateTime start_time) {
-        this.start_time = start_time;
+    public void setStartTime(LocalDateTime startTime) {
+        this.startTime = startTime;
     }
 
-    public void setEndTime(LocalDateTime end_time) {
-        this.end_time = end_time;
+    public void setEndTime(LocalDateTime endTime) {
+        this.endTime = endTime;
     }
 
     public void setTitle(String title) {

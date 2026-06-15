@@ -33,7 +33,7 @@ public class TaskService {
         return repository.put(id, start_time, end_time, title);
     }
 
-    // public void deleteTask(Long id) {
-    //     repository.delete(id);
-    // }
+    public Task deleteTask(int id) {
+        return repository.delete(id);
+    }
 }

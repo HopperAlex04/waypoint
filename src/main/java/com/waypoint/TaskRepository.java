@@ -17,4 +17,6 @@ public interface TaskRepository {
         LocalDateTime end_time,
         String title
     );
+
+    public Task delete(int id);
 }
