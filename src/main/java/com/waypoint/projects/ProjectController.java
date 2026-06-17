@@ -1,4 +1,4 @@
-package com.waypoint;
+package com.waypoint.projects;
 
 import java.util.List;
 import org.springframework.web.bind.annotation.*;

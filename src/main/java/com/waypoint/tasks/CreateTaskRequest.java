@@ -1,14 +1,15 @@
-package com.waypoint;
+package com.waypoint.tasks;
 
 import java.time.LocalDateTime;
 
-public class UpdateTaskRequest {
+public class CreateTaskRequest {
 
-    LocalDateTime startTime;
-    LocalDateTime endTime;
-    String title;
+    private LocalDateTime startTime;
 
-    public UpdateTaskRequest() {}
+    private LocalDateTime endTime;
+    private String title;
+
+    public CreateTaskRequest() {}
 
     public LocalDateTime getStartTime() {
         return startTime;

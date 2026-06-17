@@ -1,4 +1,4 @@
-package com.waypoint;
+package com.waypoint.tasks;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

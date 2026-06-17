@@ -1,4 +1,4 @@
-package com.waypoint;
+package com.waypoint.projects;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;

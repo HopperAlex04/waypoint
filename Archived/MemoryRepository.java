@@ -1,5 +1,6 @@
 package com.waypoint;
 
+import com.waypoint.tasks.Task;
 import java.time.LocalDateTime;
 import java.util.Hashtable;
 

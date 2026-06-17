@@ -1,4 +1,4 @@
-package com.waypoint;
+package com.waypoint.tasks;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;

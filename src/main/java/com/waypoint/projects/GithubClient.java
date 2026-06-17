@@ -1,4 +1,4 @@
-package com.waypoint;
+package com.waypoint.projects;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClient;

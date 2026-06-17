@@ -1,4 +1,4 @@
-package com.waypoint;
+package com.waypoint.projects;
 
 public class Project {
 

@@ -1,14 +1,14 @@
-package com.waypoint;
+package com.waypoint.tasks;
 
 import java.time.LocalDateTime;
 
-public class GetTasksInRangeRequest {
+public class UpdateTaskRequest {
 
-    private LocalDateTime startTime;
+    LocalDateTime startTime;
+    LocalDateTime endTime;
+    String title;
 
-    private LocalDateTime endTime;
-
-    public GetTasksInRangeRequest() {}
+    public UpdateTaskRequest() {}
 
     public LocalDateTime getStartTime() {
         return startTime;
@@ -18,11 +18,19 @@ public class GetTasksInRangeRequest {
         return endTime;
     }
 
+    public String getTitle() {
+        return title;
+    }
+
     public void setStartTime(LocalDateTime startTime) {
         this.startTime = startTime;
     }
 
     public void setEndTime(LocalDateTime endTime) {
         this.endTime = endTime;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 }
