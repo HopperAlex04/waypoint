@@ -2,10 +2,10 @@ package com.waypoint;
 
 import java.time.LocalDateTime;
 import java.util.Hashtable;
-import org.springframework.stereotype.Repository;
 
-@Repository
-public class MemoryRepository implements TaskRepository {
+public class MemoryRepository {
+
+    //implements TaskRepository
 
     private Hashtable<Integer, Task> data;
     int next_id;
@@ -24,7 +24,7 @@ public class MemoryRepository implements TaskRepository {
         LocalDateTime end_time,
         String title
     ) {
-        Task new_task = new Task(next_id, start_time, end_time, title);
+        Task new_task = new Task();
         data.put(next_id, new_task);
 
         next_id++;

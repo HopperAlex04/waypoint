@@ -1,5 +1,6 @@
 package com.waypoint;
 
+import java.util.List;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -12,9 +13,36 @@ public class TaskController {
         this.service = service;
     }
 
+    @GetMapping
+    public List<Task> getTasks() {
+        return service.getTasks();
+    }
+
     @GetMapping("/{id}")
-    public Task getTask(@PathVariable int id) {
+    public Task getTask(@PathVariable long id) {
         return service.getTask(id);
+    }
+
+    @GetMapping("/today")
+    public List<Task> getTasksToday() {
+        return service.getTaskToday();
+    }
+
+    @GetMapping("/week")
+    public List<Task> getTasksWeek() {
+        return service.getTaskWeek();
+    }
+
+    @GetMapping("/month")
+    public List<Task> getTasksMonth() {
+        return service.getTaskMonth();
+    }
+
+    @GetMapping("/range")
+    public List<Task> getTasksInRange(
+        @RequestBody GetTasksInRangeRequest body
+    ) {
+        return service.getTasksInRange(body.getStartTime(), body.getEndTime());
     }
 
     @PostMapping
@@ -28,7 +56,7 @@ public class TaskController {
 
     @PutMapping("/{id}")
     public Task updateTask(
-        @PathVariable int id,
+        @PathVariable long id,
         @RequestBody UpdateTaskRequest body
     ) {
         return service.updateTask(
@@ -40,7 +68,7 @@ public class TaskController {
     }
 
     @DeleteMapping("/{id}")
-    public Task deleteTask(@PathVariable int id) {
-        return service.deleteTask(id);
+    public void deleteTask(@PathVariable long id) {
+        service.deleteTask(id);
     }
 }

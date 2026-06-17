@@ -1,44 +1,51 @@
 package com.waypoint;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import java.time.LocalDateTime;
 
+@Entity
+@Table(name = "tasks")
 public class Task {
 
-    Integer id;
-    LocalDateTime start_time;
-    LocalDateTime end_time;
-    String title;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
 
-    public Task(
-        int id,
-        LocalDateTime start_time,
-        LocalDateTime end_time,
-        String title
-    ) {
-        this.id = id;
-        this.start_time = start_time;
-        this.end_time = end_time;
-        this.title = title;
+    private String title;
+
+    @Column(name = "start_time")
+    private LocalDateTime startTime;
+
+    @Column(name = "end_time")
+    private LocalDateTime endTime;
+
+    public long getId() {
+        return id;
     }
 
     public LocalDateTime getStartTime() {
-        return start_time;
+        return startTime;
     }
 
     public LocalDateTime getEndTime() {
-        return end_time;
+        return endTime;
     }
 
     public String getTitle() {
         return title;
     }
 
-    public void setStartTime(LocalDateTime start_time) {
-        this.start_time = start_time;
+    public void setStartTime(LocalDateTime startTime) {
+        this.startTime = startTime;
     }
 
-    public void setEndTime(LocalDateTime end_time) {
-        this.end_time = end_time;
+    public void setEndTime(LocalDateTime endTime) {
+        this.endTime = endTime;
     }
 
     public void setTitle(String title) {

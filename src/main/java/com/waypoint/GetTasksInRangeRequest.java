@@ -2,14 +2,13 @@ package com.waypoint;
 
 import java.time.LocalDateTime;
 
-public class CreateTaskRequest {
+public class GetTasksInRangeRequest {
 
     private LocalDateTime startTime;
 
     private LocalDateTime endTime;
-    private String title;
 
-    public CreateTaskRequest() {}
+    public GetTasksInRangeRequest() {}
 
     public LocalDateTime getStartTime() {
         return startTime;
@@ -19,19 +18,11 @@ public class CreateTaskRequest {
         return endTime;
     }
 
-    public String getTitle() {
-        return title;
-    }
-
     public void setStartTime(LocalDateTime startTime) {
         this.startTime = startTime;
     }
 
     public void setEndTime(LocalDateTime endTime) {
         this.endTime = endTime;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
     }
 }
