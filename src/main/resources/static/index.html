@@ -1,40 +1,13 @@
 <!doctype html>
 <html>
     <body>
-        <h1>Tasks</h1>
+        <h1>Home</h1>
 
-        <button onclick="loadTasks()">Load Tasks</button>
-        <button onclick="loadTodayTasks()">Load Todays Tasks</button>
-        <ul id="tasks"></ul>
-
-        <script>
-            async function loadTasks() {
-                const response = await fetch("/api/tasks");
-                const tasks = await response.json();
-
-                const list = document.getElementById("tasks");
-                list.innerHTML = "";
-
-                tasks.forEach((task) => {
-                    const li = document.createElement("li");
-                    li.textContent = task.title;
-                    list.appendChild(li);
-                });
-            }
-
-            async function loadTodayTasks() {
-                const response = await fetch("/api/tasks/today");
-                const tasks = await response.json();
-
-                const list = document.getElementById("tasks");
-                list.innerHTML = "";
-
-                tasks.forEach((task) => {
-                    const li = document.createElement("li");
-                    li.textContent = task.title;
-                    list.appendChild(li);
-                });
-            }
-        </script>
+        <nav>
+            <ul>
+                <li><a href="tasks.html">Tasks</a></li>
+                <li><a href="projects.html">Projects</a></li>
+            </ul>
+        </nav>
     </body>
 </html>

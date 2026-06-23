@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+    <body onload="loadProjects()">
+        <li><a href="index.html">Home</a></li>
+        <ul id="projects"></ul>
+        <script>
+            async function loadProjects() {
+                const response = await fetch("/api/projects");
+                const projects = await response.json();
+
+                const list = document.getElementById("projects");
+                list.innerHTML = "";
+
+                projects.forEach((project) => {
+                    const li = document.createElement("li");
+                    li.textContent = project.title;
+                    list.appendChild(li);
+                });
+            }
+        </script>
+    </body>
+</html>
