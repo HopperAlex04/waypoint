@@ -9,7 +9,7 @@ import org.springframework.web.servlet.HandlerInterceptor;
 @Component
 public class ApiKeyInterceptor implements HandlerInterceptor {
 
-    @Value("${app.admin-key}")
+    @Value("${ADMIN_KEY}")
     private String adminKey;
 
     @Override
