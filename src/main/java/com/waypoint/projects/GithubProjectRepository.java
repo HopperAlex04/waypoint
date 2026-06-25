@@ -37,4 +37,8 @@ public class GithubProjectRepository implements ProjectRepository {
 
         return repos;
     }
+
+    public GithubRepo find(String name) {
+        return githubClient.getRepository("HopperAlex04", name);
+    }
 }

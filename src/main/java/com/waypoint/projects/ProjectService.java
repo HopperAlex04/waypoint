@@ -24,6 +24,11 @@ public class ProjectService {
         return projects;
     }
 
+    public Project getProject(String name) {
+        GithubRepo repo = repository.find(name);
+        return toProject(repo);
+    }
+
     private Project toProject(GithubRepo repo) {
         Project project = new Project();
 

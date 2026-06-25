@@ -17,4 +17,9 @@ public class ProjectController {
     public List<Project> getProjects() {
         return service.getProjects();
     }
+
+    @GetMapping("/{name}")
+    public Project getProject(@PathVariable String name) {
+        return service.getProject(name);
+    }
 }

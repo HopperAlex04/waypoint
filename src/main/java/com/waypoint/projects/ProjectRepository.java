@@ -4,4 +4,5 @@ import java.util.List;
 
 public interface ProjectRepository {
     List<GithubRepo> findAll();
+    GithubRepo find(String name);
 }
