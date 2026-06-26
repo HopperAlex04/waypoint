@@ -1,31 +1,24 @@
-import { useState, useEffect } from "react";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+
+import Home from "./pages/Home";
+import Tasks from "./pages/Tasks";
+import Projects from "./pages/Projects";
 
 function App() {
-  const [projects, setProjects] = useState([]);
-
-  useEffect(() => {
-    fetch("http://localhost:8081/api/projects")
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error("HTTP error " + res.status);
-        }
-        return res.json();
-      })
-      .then((data) => setProjects(data))
-      .catch((err) => console.error("Fetch failed:", err));
-  }, []);
-
   return (
-    <div>
-      <h1>Projects</h1>
+    <BrowserRouter>
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="/tasks">Tasks</Link>
+        <Link to="/projects">Projects</Link>
+      </nav>
 
-      {projects.map((project) => (
-        <div key={project.title}>
-          <h2>{project.title}</h2>
-          <p>{project.description}</p>
-        </div>
-      ))}
-    </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/tasks" element={<Tasks />} />
+        <Route path="/projects" element={<Projects />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
