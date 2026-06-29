@@ -1,7 +1,9 @@
 # task-manager-api
 
+Monorepo layout: backend lives in `backend/`, frontend in `frontend/`. Run the Maven commands below from the `backend/` directory (or pass `-f backend/pom.xml`).
+
 #Startup command
-mvn spring-boot:run -Dspring-boot.run.arguments=--server.port=8081 (Change to whatever port you need want it on)
+cd backend && mvn spring-boot:run -Dspring-boot.run.arguments=--server.port=8081 (Change to whatever port you need want it on)
 
 #HTTP through curl for taks endpoint
 *GET*: curl http://localhost:8081/api/tasks/1
@@ -14,4 +16,4 @@ curl -X POST http://localhost:8081/api/tasks \
 *PUT*:curl -X PUT http://localhost:8081/api/tasks/*(id no.)* -H 'Content-Type: application/json' -d '{"title": "funnytask"}'
 
 #Run Tests
-mvn -q test
+cd backend && mvn -q test

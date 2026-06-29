@@ -1,23 +1,41 @@
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 
 import Home from "./pages/Home";
 import Tasks from "./pages/Tasks";
 import Projects from "./pages/Projects";
+import "./App.css";
 
 function App() {
   return (
     <BrowserRouter>
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/tasks">Tasks</Link>
-        <Link to="/projects">Projects</Link>
-      </nav>
+      <div className="app-shell">
+        <header className="site-header">
+          <div className="header-inner">
+            <NavLink to="/" className="brand">
+              Waypoint
+            </NavLink>
+            <nav className="site-nav">
+              <NavLink to="/" end>
+                Home
+              </NavLink>
+              <NavLink to="/projects">Projects</NavLink>
+              <NavLink to="/tasks">Tasks</NavLink>
+            </nav>
+          </div>
+        </header>
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/tasks" element={<Tasks />} />
-        <Route path="/projects" element={<Projects />} />
-      </Routes>
+        <main className="site-main">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/tasks" element={<Tasks />} />
+            <Route path="/projects" element={<Projects />} />
+          </Routes>
+        </main>
+
+        <footer className="site-footer">
+          <p>&copy; {new Date().getFullYear()} Waypoint. Built with React.</p>
+        </footer>
+      </div>
     </BrowserRouter>
   );
 }

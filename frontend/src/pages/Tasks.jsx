@@ -4,14 +4,14 @@ export default function Tasks() {
   const [tasks, setTasks] = useState([]);
 
   async function loadTasks() {
-    const response = await fetch("http://localhost:8081/api/tasks");
+    const response = await fetch("/api/tasks");
     const data = await response.json();
 
     setTasks(data);
   }
 
   async function loadTodayTasks() {
-    const response = await fetch("http://localhost:8081/api/tasks/today");
+    const response = await fetch("/api/tasks/today");
     const data = await response.json();
 
     setTasks(data);
